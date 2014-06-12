@@ -49,7 +49,6 @@
           (define (size-sum aloa) (foldr (lambda (app sum) (+ (app-size app) sum)) 0 aloa))
           ;;enumerator: (listof app) -> (listof (listof app))
           ;;return a list that contain every combinations, no matter possible or not
-          ;;implementation is like a tree: one site with element a, the other site without element a... and do it recursively
           (define (enumerator aloa)
             (cond [(empty? aloa) empty]
                   [else (append (enumerator (rest aloa)) 
